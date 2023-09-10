@@ -2,11 +2,15 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IEntradas } from '../ientradas';
 import { EntradasService } from '../entradas.service';
+import { EntradasListComponent } from '../entradas-list/entradas-list.component';
 
 @Component({
   selector: 'app-entradas',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    EntradasListComponent
+  ],
   template: `
     <h3>Entradas</h3>
     <br/>
@@ -31,16 +35,26 @@ import { EntradasService } from '../entradas.service';
 
 
     ---
+    <app-entradas-list
+      *ngFor="let ent of entradasList"
+      [entradasList]="ent">
+    </app-entradas-list>
+
   `,
   styleUrls: ['./entradas.component.css']
 })
 export class EntradasComponent {
-  entradas: IEntradas[] = [];
+  entradasList: IEntradas[] = [];
   entradasService: EntradasService = inject(EntradasService);
 
   constructor(){
-    console.log("oi");
-    var x = this.entradasService.getAll();
-    console.log(x);
+    var ret = this.entradasService.getAll();
+    console.log("--- ret ---");
+    console.log(ret);
+
+    this.entradasService.getAll().then((retList: IEntradas[]) => {
+      this.entradasList = retList;
+    });
+
   }
 }
