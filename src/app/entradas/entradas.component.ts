@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IEntradas } from '../ientradas';
+import { EntradasService } from '../entradas.service';
 
 @Component({
   selector: 'app-entradas',
@@ -26,9 +28,19 @@ import { CommonModule } from '@angular/common';
     <div class="mb-3">      
       <input type="date" class="form-control">
     </div>
+
+
+    ---
   `,
   styleUrls: ['./entradas.component.css']
 })
 export class EntradasComponent {
+  entradas: IEntradas[] = [];
+  entradasService: EntradasService = inject(EntradasService);
 
+  constructor(){
+    console.log("oi");
+    var x = this.entradasService.getAll();
+    console.log(x);
+  }
 }
