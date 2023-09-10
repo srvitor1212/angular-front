@@ -13,13 +13,13 @@ import { CommonModule } from '@angular/common';
   <ul class="nav nav-pills">
     
     <li class="nav-item">
-      <a [routerLink]="['/']" class="nav-link active" aria-current="page">Home</a>
+      <a [routerLink]="['/']" class="nav-link" aria-current="page">Home</a>
     </li>
 
     <li class="nav-item">
       <a [routerLink]="['/entradas']" class="nav-link">Entradas</a>
     </li>
-    
+
   </ul>
   `,
   styleUrls: ['./headerlinks.component.css']

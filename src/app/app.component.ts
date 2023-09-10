@@ -18,21 +18,13 @@ import { HeaderlinksComponent } from './headerlinks/headerlinks.component';
       </a>
       <app-headerlinks></app-headerlinks>
     </header>
-
-    <p>App simples para testar a integrar um front-end Angular :)</p>    
     
     <main>
-    <!-- 
-      <a [routerLink]="['/']">
-        <header class="brand-name">
-          <img class="brand-logo" src="/assets/logo.svg" alt="logo" aria-hidden="true">
-        </header>
-      </a>
-      -->
-
-      <section class="content">
-        <router-outlet></router-outlet>
-      </section>
+      <div class="container">
+        <section class="content">
+          <router-outlet></router-outlet>
+        </section>
+      </div>
     </main>
 
     `,

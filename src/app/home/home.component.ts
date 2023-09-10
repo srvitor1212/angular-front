@@ -6,8 +6,9 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
+    <p>App simples para testar e integrar um front-end Angular :)</p>
     <p>
-      home works!
+      Navegue entre as opções para começar
     </p>
   `,
   styleUrls: ['./home.component.css']
