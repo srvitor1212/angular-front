@@ -18,13 +18,29 @@ import { RouterModule } from '@angular/router';
     <br/>
     <hr/>
 
-    <app-entradas-list
-      *ngFor="let ent of entradasList"
-      [entradasList]="ent">
-    </app-entradas-list>
+    <table class="table">
+
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Valor</th>
+          <th scope="col">Recebeo até</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let ent of entradasList">
+            <td>{{ent.id}}</td>
+            <td>{{ent.nome}}</td>
+            <td>{{ent.valor}}</td>
+            <td>{{ent.dataVigencia}}</td>
+        </tr>
+
+      </tbody>
+    </table>
   
     <button [routerLink]="['/add-entradas']" type="button" class="btn btn-success">Adicionar</button>
-
   `,
   styleUrls: ['./entradas.component.css']
 })

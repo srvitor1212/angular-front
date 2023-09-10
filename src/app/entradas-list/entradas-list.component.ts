@@ -7,12 +7,11 @@ import { IEntradas } from '../ientradas';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <p>
-      {{ entradasList.id }}
-      {{ entradasList.nome }}
-      {{ entradasList.valor }}
-      {{ entradasList.dataVigencia }}
-    </p>
+    {{ entradasList.id }}
+    {{ entradasList.nome }}
+    {{ entradasList.valor }}
+    {{ entradasList.dataVigencia }}
+    <br/>
   `,
   styleUrls: ['./entradas-list.component.css']
 })
