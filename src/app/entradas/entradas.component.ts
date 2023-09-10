@@ -2,7 +2,6 @@ import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IEntradas } from '../ientradas';
 import { EntradasService } from '../entradas.service';
-import { EntradasListComponent } from '../entradas-list/entradas-list.component';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -10,7 +9,6 @@ import { RouterModule } from '@angular/router';
   standalone: true,
   imports: [
     CommonModule,
-    EntradasListComponent,
     RouterModule,
   ],
   template: `
@@ -25,7 +23,7 @@ import { RouterModule } from '@angular/router';
           <th scope="col">#</th>
           <th scope="col">Nome</th>
           <th scope="col">Valor</th>
-          <th scope="col">Recebeo até</th>
+          <th scope="col">Recebo até</th>
         </tr>
       </thead>
 
