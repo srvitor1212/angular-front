@@ -8,7 +8,6 @@ import { IEntradas } from '../ientradas';
   imports: [CommonModule],
   template: `
     <p>
-      entradas-list works!
       {{ entradasList.id }}
       {{ entradasList.nome }}
       {{ entradasList.valor }}
